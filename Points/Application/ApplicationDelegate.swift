@@ -12,7 +12,8 @@ class ApplicationDelegate: UIResponder, UIApplicationDelegate {
 		_ application: UIApplication,
 		didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
 	) -> Bool {
-		startRootScreen()
+//		startRootScreen()
+		startMasterScreen()
 		return true
 	}
 }
@@ -34,6 +35,15 @@ private extension ApplicationDelegate {
 		viewController.view = UITableView()
 		let navigationController = UINavigationController(
 			rootViewController: viewController
+		)
+		rootWindow.rootViewController = navigationController
+		rootWindow.makeKeyAndVisible()
+	}
+
+	func startMasterScreen() {
+		let viewController = MasterScreen()
+		let navigationController = UINavigationController(
+				rootViewController: viewController
 		)
 		rootWindow.rootViewController = navigationController
 		rootWindow.makeKeyAndVisible()
