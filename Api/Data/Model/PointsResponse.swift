@@ -9,6 +9,6 @@ struct PointsResponse: Codable {
 }
 
 struct PointResponse: Codable {
-	let x: Int
-	let y: Int
+	let x: Double
+	let y: Double
 }

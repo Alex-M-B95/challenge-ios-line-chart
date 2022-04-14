@@ -5,9 +5,12 @@
 import Foundation
 
 final class FetchPointsApiCommand: ApiCommand<PointsResponse> {
-	override var host: URL { URL(string: "hr-challenge.interactivestandard.com/")! }
-	override var endpoint: String { "/api/test/points" }
+	override var host: URL { URL(string: "https://hr-challenge.interactivestandard.com/")! }
+	override var endpoint: String { "api/test/points" }
 	override var method: ApiMethod { .get }
+	override var parameters: [String: Any] {
+		["count": count]
+	}
 
 	let count: Int
 

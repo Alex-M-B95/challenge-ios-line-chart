@@ -9,6 +9,18 @@ final class MasterScreen: UIViewController {
 	// MARK: - Views
 	private lazy var rootView = MasterView()
 
+	// MARK: - Values
+	let presenter: MasterPresenterProtocol
+
+	init(presenter: MasterPresenterProtocol) {
+		self.presenter = presenter
+		super.init(nibName: nil, bundle: nil)
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
 	// MARK: - Object life cycle
 
 	// MARK: - UIViewController life cycle
@@ -20,12 +32,8 @@ final class MasterScreen: UIViewController {
 }
 
 extension MasterScreen: MasterViewDelegate {
-	func didChangeValue(_ value: Int) {
-		// TODO: Save value
-	}
-
 	func didSubmit() {
-		// TODO: Handle saved value
+		presenter.submit(points: rootView.count)
 	}
 }
 

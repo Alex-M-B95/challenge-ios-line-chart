@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		13091C2C2805DA8400D9E117 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 13091C2B2805DA8400D9E117 /* SnapKit */; };
-		13091C302805DAF600D9E117 /* MasterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13091C2F2805DAF600D9E117 /* MasterScreen.swift */; };
-		13091C322805DB1100D9E117 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13091C312805DB1100D9E117 /* MasterView.swift */; };
 		130B8DE9280467B800E251B1 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B8DE8280467B800E251B1 /* ApplicationDelegate.swift */; };
 		130B8DF2280467B900E251B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130B8DF1280467B900E251B1 /* Assets.xcassets */; };
 		130B8DF5280467B900E251B1 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 130B8DF3280467B900E251B1 /* Launch.storyboard */; };
@@ -22,17 +20,29 @@
 		130B8E2A2804745F00E251B1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 130B8E292804745F00E251B1 /* Alamofire */; };
 		130B8E2E280481EF00E251B1 /* PointsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B8E2D280481EF00E251B1 /* PointsResponse.swift */; };
 		130B8E31280482C900E251B1 /* PointsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B8E30280482C900E251B1 /* PointsGateway.swift */; };
+		13910B5E280853D700AC42C6 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 13910B5D280853D700AC42C6 /* Swinject */; };
+		ABA7B00773D5AA23BB091D45 /* GuiApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B7E40BF123071267E311 /* GuiApplicationService.swift */; };
 		ABA7B13EDAB9AB56EAAF212C /* ApiCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7BDF1F7A499ED803A3750 /* ApiCommand.swift */; };
 		ABA7B14A1CC393F7303A7466 /* PointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B5D16B211D3D52D0A703 /* PointModel.swift */; };
 		ABA7B15E5D458A0C522FDD44 /* ExecutorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B88F9896234D0F1C066D /* ExecutorProtocol.swift */; };
+		ABA7B1D48D25E7DDF6D527BA /* ScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B18BCDF17CFFDF675C2B /* ScreenAssembly.swift */; };
+		ABA7B2814FAC41C5C530F854 /* ApplicationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B8892DADB28C538241E1 /* ApplicationServiceProtocol.swift */; };
+		ABA7B2B98DFDA92CD1A75536 /* MasterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B1A6427CADACF132ADC1 /* MasterScreen.swift */; };
+		ABA7B2D547EB5EE7EA29E484 /* MasterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B2C058E11F38CA0B0832 /* MasterPresenter.swift */; };
 		ABA7B31D6D7C75DB8E2650AF /* FetchPointsApiCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B002817FFC331D811CDB /* FetchPointsApiCommand.swift */; };
 		ABA7B48F22E43BAEB75D013B /* PointsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B8FC52DD48EDF623F6AB /* PointsGateway.swift */; };
 		ABA7B588CB82E3B82B6664BB /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B28C7C9B01B0D98A9B17 /* DomainError.swift */; };
+		ABA7B5B40F6F4334C6A7FA24 /* DependenciesApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B57B1A1F207F461837F3 /* DependenciesApplicationService.swift */; };
 		ABA7B718FED9A8B078FDE110 /* Typealiases+Imports.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B57E6AAED0E5C30A1348 /* Typealiases+Imports.swift */; };
+		ABA7B7A0EDDA6F7FE5876288 /* PresenterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7BE757A5BF20B701623BE /* PresenterAssembly.swift */; };
 		ABA7B7ABE18F75B198D54A0B /* Operations+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7BF9E2EED9F5765A919AE /* Operations+Command.swift */; };
 		ABA7B80972B430395889E1E7 /* CommandProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7BEAC3C1147C6315F8300 /* CommandProtocol.swift */; };
+		ABA7B81EB978F01C92C1CC2A /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B14ACAEF8B17EBD64F8E /* UseCaseFactory.swift */; };
 		ABA7B839E2E2201CDE58F6ED /* Api.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA7B6F56DE73BAF6D514321 /* Api.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABA7BB897B412FC5A5B8D48A /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B3216E7C6EA504D6076A /* MasterView.swift */; };
 		ABA7BD94C8DFED80450602DB /* GetPointsCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B5AC43C6E48F49D22CC1 /* GetPointsCase.swift */; };
+		ABA7BEE44DDBB20E1D727D3D /* FactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7BCCEAEE39D918FB5CBD1 /* FactoryAssembly.swift */; };
+		ABA7BF875AFFBDE301A536F0 /* GatewayAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B1C6E6578EBD2292DA77 /* GatewayAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +85,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		13091C2F2805DAF600D9E117 /* MasterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterScreen.swift; sourceTree = "<group>"; };
-		13091C312805DB1100D9E117 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		130B8DE5280467B800E251B1 /* Points.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Points.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		130B8DE8280467B800E251B1 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		130B8DF1280467B900E251B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,14 +96,25 @@
 		130B8E2D280481EF00E251B1 /* PointsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsResponse.swift; sourceTree = "<group>"; };
 		130B8E30280482C900E251B1 /* PointsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsGateway.swift; sourceTree = "<group>"; };
 		ABA7B002817FFC331D811CDB /* FetchPointsApiCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchPointsApiCommand.swift; sourceTree = "<group>"; };
+		ABA7B14ACAEF8B17EBD64F8E /* UseCaseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
+		ABA7B18BCDF17CFFDF675C2B /* ScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenAssembly.swift; sourceTree = "<group>"; };
+		ABA7B1A6427CADACF132ADC1 /* MasterScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterScreen.swift; sourceTree = "<group>"; };
+		ABA7B1C6E6578EBD2292DA77 /* GatewayAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayAssembly.swift; sourceTree = "<group>"; };
 		ABA7B28C7C9B01B0D98A9B17 /* DomainError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		ABA7B2C058E11F38CA0B0832 /* MasterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterPresenter.swift; sourceTree = "<group>"; };
+		ABA7B3216E7C6EA504D6076A /* MasterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
+		ABA7B57B1A1F207F461837F3 /* DependenciesApplicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependenciesApplicationService.swift; sourceTree = "<group>"; };
 		ABA7B57E6AAED0E5C30A1348 /* Typealiases+Imports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealiases+Imports.swift"; sourceTree = "<group>"; };
 		ABA7B5AC43C6E48F49D22CC1 /* GetPointsCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPointsCase.swift; sourceTree = "<group>"; };
 		ABA7B5D16B211D3D52D0A703 /* PointModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
 		ABA7B6F56DE73BAF6D514321 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
+		ABA7B7E40BF123071267E311 /* GuiApplicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiApplicationService.swift; sourceTree = "<group>"; };
+		ABA7B8892DADB28C538241E1 /* ApplicationServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationServiceProtocol.swift; sourceTree = "<group>"; };
 		ABA7B88F9896234D0F1C066D /* ExecutorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutorProtocol.swift; sourceTree = "<group>"; };
 		ABA7B8FC52DD48EDF623F6AB /* PointsGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsGateway.swift; sourceTree = "<group>"; };
+		ABA7BCCEAEE39D918FB5CBD1 /* FactoryAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoryAssembly.swift; sourceTree = "<group>"; };
 		ABA7BDF1F7A499ED803A3750 /* ApiCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiCommand.swift; sourceTree = "<group>"; };
+		ABA7BE757A5BF20B701623BE /* PresenterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterAssembly.swift; sourceTree = "<group>"; };
 		ABA7BEAC3C1147C6315F8300 /* CommandProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandProtocol.swift; sourceTree = "<group>"; };
 		ABA7BF9E2EED9F5765A919AE /* Operations+Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Operations+Command.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +127,7 @@
 				13091C2C2805DA8400D9E117 /* SnapKit in Frameworks */,
 				130B8E0A28046B2300E251B1 /* Domain.framework in Frameworks */,
 				130B8E1D28046EDF00E251B1 /* Api.framework in Frameworks */,
+				13910B5E280853D700AC42C6 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +161,8 @@
 		13091C2E2805DABE00D9E117 /* Master */ = {
 			isa = PBXGroup;
 			children = (
-				13091C2F2805DAF600D9E117 /* MasterScreen.swift */,
-				13091C312805DB1100D9E117 /* MasterView.swift */,
+				ABA7BB036FD20B586814A90B /* UI */,
+				ABA7BFCE2EDDB94F148442A9 /* Presenter */,
 			);
 			path = Master;
 			sourceTree = "<group>";
@@ -175,6 +195,8 @@
 				130B8DFD2804683100E251B1 /* Application */,
 				130B8DFE2804694500E251B1 /* Resources */,
 				130B8DFC2804682600E251B1 /* Support Files */,
+				ABA7BD65C824D9460E61519D /* Service */,
+				ABA7B29D0357C61FE6831EA6 /* Dependencies */,
 			);
 			path = Points;
 			sourceTree = "<group>";
@@ -192,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				130B8DE8280467B800E251B1 /* ApplicationDelegate.swift */,
+				ABA7B8892DADB28C538241E1 /* ApplicationServiceProtocol.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -213,6 +236,7 @@
 				ABA7B1905C6C4D66E1881BAD /* Data */,
 				ABA7B4FBD19B1020C0EF1E61 /* Case */,
 				ABA7B7DF9A026DF5566203C6 /* Gateway */,
+				ABA7B9C73BA8D049D73FD6DA /* Factory */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -302,6 +326,17 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		ABA7B29D0357C61FE6831EA6 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7B18BCDF17CFFDF675C2B /* ScreenAssembly.swift */,
+				ABA7BE757A5BF20B701623BE /* PresenterAssembly.swift */,
+				ABA7BCCEAEE39D918FB5CBD1 /* FactoryAssembly.swift */,
+				ABA7B1C6E6578EBD2292DA77 /* GatewayAssembly.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 		ABA7B37437A649993E0CE443 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,12 +362,29 @@
 			path = Case;
 			sourceTree = "<group>";
 		};
+		ABA7B760755091798C8B0270 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7B7E40BF123071267E311 /* GuiApplicationService.swift */,
+				ABA7B57B1A1F207F461837F3 /* DependenciesApplicationService.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		ABA7B7DF9A026DF5566203C6 /* Gateway */ = {
 			isa = PBXGroup;
 			children = (
 				ABA7B8FC52DD48EDF623F6AB /* PointsGateway.swift */,
 			);
 			path = Gateway;
+			sourceTree = "<group>";
+		};
+		ABA7B9C73BA8D049D73FD6DA /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7B14ACAEF8B17EBD64F8E /* UseCaseFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		ABA7B9CFC83B2203F2B160D7 /* Network */ = {
@@ -349,6 +401,31 @@
 				ABA7B6F56DE73BAF6D514321 /* Api.h */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		ABA7BB036FD20B586814A90B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7B3216E7C6EA504D6076A /* MasterView.swift */,
+				ABA7B1A6427CADACF132ADC1 /* MasterScreen.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		ABA7BD65C824D9460E61519D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7B760755091798C8B0270 /* Application */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		ABA7BFCE2EDDB94F148442A9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7B2C058E11F38CA0B0832 /* MasterPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +468,7 @@
 			name = Points;
 			packageProductDependencies = (
 				13091C2B2805DA8400D9E117 /* SnapKit */,
+				13910B5D280853D700AC42C6 /* Swinject */,
 			);
 			productName = Points;
 			productReference = 130B8DE5280467B800E251B1 /* Points.app */;
@@ -469,6 +547,7 @@
 			packageReferences = (
 				130B8E282804745F00E251B1 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
 				13091C2A2805DA8400D9E117 /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+				13910B5C2808535200AC42C6 /* XCRemoteSwiftPackageReference "Swinject.git" */,
 			);
 			productRefGroup = 130B8DE6280467B800E251B1 /* Products */;
 			projectDirPath = "";
@@ -512,10 +591,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13091C322805DB1100D9E117 /* MasterView.swift in Sources */,
 				130B8DE9280467B800E251B1 /* ApplicationDelegate.swift in Sources */,
-				13091C302805DAF600D9E117 /* MasterScreen.swift in Sources */,
 				ABA7B718FED9A8B078FDE110 /* Typealiases+Imports.swift in Sources */,
+				ABA7BB897B412FC5A5B8D48A /* MasterView.swift in Sources */,
+				ABA7B2B98DFDA92CD1A75536 /* MasterScreen.swift in Sources */,
+				ABA7B2D547EB5EE7EA29E484 /* MasterPresenter.swift in Sources */,
+				ABA7B2814FAC41C5C530F854 /* ApplicationServiceProtocol.swift in Sources */,
+				ABA7B00773D5AA23BB091D45 /* GuiApplicationService.swift in Sources */,
+				ABA7B5B40F6F4334C6A7FA24 /* DependenciesApplicationService.swift in Sources */,
+				ABA7B1D48D25E7DDF6D527BA /* ScreenAssembly.swift in Sources */,
+				ABA7B7A0EDDA6F7FE5876288 /* PresenterAssembly.swift in Sources */,
+				ABA7BEE44DDBB20E1D727D3D /* FactoryAssembly.swift in Sources */,
+				ABA7BF875AFFBDE301A536F0 /* GatewayAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +617,7 @@
 				ABA7BD94C8DFED80450602DB /* GetPointsCase.swift in Sources */,
 				ABA7B48F22E43BAEB75D013B /* PointsGateway.swift in Sources */,
 				ABA7B588CB82E3B82B6664BB /* DomainError.swift in Sources */,
+				ABA7B81EB978F01C92C1CC2A /* UseCaseFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,6 +1009,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		13910B5C2808535200AC42C6 /* XCRemoteSwiftPackageReference "Swinject.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -933,6 +1029,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 130B8E282804745F00E251B1 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
+		};
+		13910B5D280853D700AC42C6 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 13910B5C2808535200AC42C6 /* XCRemoteSwiftPackageReference "Swinject.git" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

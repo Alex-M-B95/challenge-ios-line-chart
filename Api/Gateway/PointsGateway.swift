@@ -6,6 +6,8 @@ import Foundation
 import Domain
 
 public final class PointsGateway: PointsGatewayProtocol {
+	public init() {}
+
 	public func fetch(count: Int,
 					  completion: @escaping (Result<[PointModel], Error>) -> Void)
 	-> CommandProtocol {

@@ -6,7 +6,6 @@ import Foundation
 import UIKit
 
 protocol MasterViewDelegate: AnyObject {
-	func didChangeValue(_ value: Int)
 	func didSubmit()
 }
 
@@ -17,6 +16,7 @@ final class MasterView: UIView {
 	private lazy var submitButton = UIButton()
 
 	// MARK: - Values
+	private(set) var count: Int = 0
 	weak var delegate: MasterViewDelegate?
 
 	// MARK: - Object life cycle
@@ -87,7 +87,7 @@ private extension MasterView {
 			return
 		}
 		submitButton.isEnabled = true
-		delegate?.didChangeValue(value)
+		count = value
 	}
 
 	@objc

@@ -6,12 +6,12 @@ import Foundation
 
 public protocol GetPointsCaseProtocol: CommandProtocol {}
 
-public final class GetPointsCase: GetPointsCaseProtocol {
+public final class GetPointsCase: Operation, GetPointsCaseProtocol {
 	let count: Int
 	let gateway: PointsGatewayProtocol
 	let onResult: (Result<[PointModel], GetPointsError>) -> Void
 
-	private lazy var executor: ExecutorProtocol = OperationQueue()
+	private lazy var executor = OperationQueue()
 
 	public init(count: Int,
 				gateway: PointsGatewayProtocol,
@@ -21,7 +21,7 @@ public final class GetPointsCase: GetPointsCaseProtocol {
 		self.onResult = onResult
 	}
 
-	public func execute() {
+	public override func start() {
 		let command = gateway.fetch(count: count) { [weak self] result in
 			self?.onFetch(result)
 		}

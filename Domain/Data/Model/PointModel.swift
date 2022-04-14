@@ -5,10 +5,10 @@
 import Foundation
 
 public struct PointModel: Equatable {
-	let x: Int
-	let y: Int
+	public let x: Double
+	public let y: Double
 
-	public init(x: Int, y: Int) {
+	public init(x: Double, y: Double) {
 		self.x = x
 		self.y = y
 	}
