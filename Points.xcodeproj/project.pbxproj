@@ -29,10 +29,12 @@
 		ABA7B2814FAC41C5C530F854 /* ApplicationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B8892DADB28C538241E1 /* ApplicationServiceProtocol.swift */; };
 		ABA7B2B98DFDA92CD1A75536 /* MasterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B1A6427CADACF132ADC1 /* MasterScreen.swift */; };
 		ABA7B2D547EB5EE7EA29E484 /* MasterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B2C058E11F38CA0B0832 /* MasterPresenter.swift */; };
+		ABA7B2EE57A7EC2C74BDD69C /* AppOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B1A4C1E6A0002EB8E7EB /* AppOperation.swift */; };
 		ABA7B31D6D7C75DB8E2650AF /* FetchPointsApiCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B002817FFC331D811CDB /* FetchPointsApiCommand.swift */; };
 		ABA7B48F22E43BAEB75D013B /* PointsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B8FC52DD48EDF623F6AB /* PointsGateway.swift */; };
 		ABA7B588CB82E3B82B6664BB /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B28C7C9B01B0D98A9B17 /* DomainError.swift */; };
 		ABA7B5B40F6F4334C6A7FA24 /* DependenciesApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B57B1A1F207F461837F3 /* DependenciesApplicationService.swift */; };
+		ABA7B6062BF67C8138092AA0 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B99B73A94FE45002910B /* ApiError.swift */; };
 		ABA7B718FED9A8B078FDE110 /* Typealiases+Imports.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B57E6AAED0E5C30A1348 /* Typealiases+Imports.swift */; };
 		ABA7B7A0EDDA6F7FE5876288 /* PresenterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7BE757A5BF20B701623BE /* PresenterAssembly.swift */; };
 		ABA7B7ABE18F75B198D54A0B /* Operations+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7BF9E2EED9F5765A919AE /* Operations+Command.swift */; };
@@ -41,6 +43,7 @@
 		ABA7B839E2E2201CDE58F6ED /* Api.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA7B6F56DE73BAF6D514321 /* Api.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABA7BB897B412FC5A5B8D48A /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B3216E7C6EA504D6076A /* MasterView.swift */; };
 		ABA7BD94C8DFED80450602DB /* GetPointsCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B5AC43C6E48F49D22CC1 /* GetPointsCase.swift */; };
+		ABA7BEE27AAC2FAED275385B /* AppOperationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B84679ECA16F61F45502 /* AppOperationStatus.swift */; };
 		ABA7BEE44DDBB20E1D727D3D /* FactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7BCCEAEE39D918FB5CBD1 /* FactoryAssembly.swift */; };
 		ABA7BF875AFFBDE301A536F0 /* GatewayAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7B1C6E6578EBD2292DA77 /* GatewayAssembly.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +101,7 @@
 		ABA7B002817FFC331D811CDB /* FetchPointsApiCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchPointsApiCommand.swift; sourceTree = "<group>"; };
 		ABA7B14ACAEF8B17EBD64F8E /* UseCaseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		ABA7B18BCDF17CFFDF675C2B /* ScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenAssembly.swift; sourceTree = "<group>"; };
+		ABA7B1A4C1E6A0002EB8E7EB /* AppOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppOperation.swift; sourceTree = "<group>"; };
 		ABA7B1A6427CADACF132ADC1 /* MasterScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterScreen.swift; sourceTree = "<group>"; };
 		ABA7B1C6E6578EBD2292DA77 /* GatewayAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayAssembly.swift; sourceTree = "<group>"; };
 		ABA7B28C7C9B01B0D98A9B17 /* DomainError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
@@ -109,9 +113,11 @@
 		ABA7B5D16B211D3D52D0A703 /* PointModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
 		ABA7B6F56DE73BAF6D514321 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
 		ABA7B7E40BF123071267E311 /* GuiApplicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiApplicationService.swift; sourceTree = "<group>"; };
+		ABA7B84679ECA16F61F45502 /* AppOperationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppOperationStatus.swift; sourceTree = "<group>"; };
 		ABA7B8892DADB28C538241E1 /* ApplicationServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationServiceProtocol.swift; sourceTree = "<group>"; };
 		ABA7B88F9896234D0F1C066D /* ExecutorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutorProtocol.swift; sourceTree = "<group>"; };
 		ABA7B8FC52DD48EDF623F6AB /* PointsGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsGateway.swift; sourceTree = "<group>"; };
+		ABA7B99B73A94FE45002910B /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		ABA7BCCEAEE39D918FB5CBD1 /* FactoryAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoryAssembly.swift; sourceTree = "<group>"; };
 		ABA7BDF1F7A499ED803A3750 /* ApiCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiCommand.swift; sourceTree = "<group>"; };
 		ABA7BE757A5BF20B701623BE /* PresenterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterAssembly.swift; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA7B0A9F7F8864F6A12B27C /* Command */,
+				ABA7B7DB9382550DA849A96B /* Operation */,
 			);
 			path = Drivers;
 			sourceTree = "<group>";
@@ -371,6 +378,15 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		ABA7B7DB9382550DA849A96B /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7B1A4C1E6A0002EB8E7EB /* AppOperation.swift */,
+				ABA7B84679ECA16F61F45502 /* AppOperationStatus.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
 		ABA7B7DF9A026DF5566203C6 /* Gateway */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA7BDF1F7A499ED803A3750 /* ApiCommand.swift */,
+				ABA7B99B73A94FE45002910B /* ApiError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -618,6 +635,8 @@
 				ABA7B48F22E43BAEB75D013B /* PointsGateway.swift in Sources */,
 				ABA7B588CB82E3B82B6664BB /* DomainError.swift in Sources */,
 				ABA7B81EB978F01C92C1CC2A /* UseCaseFactory.swift in Sources */,
+				ABA7B2EE57A7EC2C74BDD69C /* AppOperation.swift in Sources */,
+				ABA7BEE27AAC2FAED275385B /* AppOperationStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +648,7 @@
 				130B8E31280482C900E251B1 /* PointsGateway.swift in Sources */,
 				ABA7B13EDAB9AB56EAAF212C /* ApiCommand.swift in Sources */,
 				130B8E2E280481EF00E251B1 /* PointsResponse.swift in Sources */,
+				ABA7B6062BF67C8138092AA0 /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

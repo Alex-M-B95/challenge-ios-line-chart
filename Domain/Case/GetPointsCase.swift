@@ -6,7 +6,7 @@ import Foundation
 
 public protocol GetPointsCaseProtocol: CommandProtocol {}
 
-public final class GetPointsCase: Operation, GetPointsCaseProtocol {
+public final class GetPointsCase: AppOperation, GetPointsCaseProtocol {
 	let count: Int
 	let gateway: PointsGatewayProtocol
 	let onResult: (Result<[PointModel], GetPointsError>) -> Void
@@ -19,9 +19,17 @@ public final class GetPointsCase: Operation, GetPointsCaseProtocol {
 		self.count = count
 		self.gateway = gateway
 		self.onResult = onResult
+		super.init()
+		ready()
 	}
 
-	public override func start() {
+	deinit {
+		debugPrint(String(describing: type(of: self)), "deinit")
+	}
+
+	public override func main() {
+		super.main()
+		guard !isCancelled else { return }
 		let command = gateway.fetch(count: count) { [weak self] result in
 			self?.onFetch(result)
 		}
@@ -30,16 +38,17 @@ public final class GetPointsCase: Operation, GetPointsCaseProtocol {
 }
 
 private extension GetPointsCase {
-	func onFetch(_ result: Result<[PointModel], Error>) {
+	func onFetch(_ result: Result<[PointModel], GetPointsError>) {
 		switch result {
 		case .success(let model):
 			if !model.isEmpty {
 				onResult(.success(model))
 			} else {
-				onResult(.failure(.unknown(NSError(domain: "Empty", code: -1))))
+				onResult(.failure(.emptyPoints))
 			}
 		case .failure(let error):
-			onResult(.failure(.unknown(error)))
+			onResult(.failure(error))
 		}
+		finish()
 	}
 }

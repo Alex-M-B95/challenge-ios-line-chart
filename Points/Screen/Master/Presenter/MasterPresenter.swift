@@ -6,6 +6,8 @@ import Foundation
 import Domain
 
 protocol MasterPresenterProtocol {
+	var view: MasterViewInput? { get set }
+
 	func submit(points count: Int)
 }
 
@@ -13,8 +15,14 @@ final class MasterPresenter: MasterPresenterProtocol {
 	let useCaseFactory: UseCaseFactoryProtocol
 	private lazy var queue = OperationQueue()
 
+	weak var view: MasterViewInput?
+
 	init(useCaseFactory: UseCaseFactoryProtocol) {
 		self.useCaseFactory = useCaseFactory
+	}
+
+	deinit {
+		debugPrint(String(describing: type(of: self)), "deinit")
 	}
 
 	func submit(points count: Int) {
@@ -26,16 +34,27 @@ final class MasterPresenter: MasterPresenterProtocol {
 }
 
 private extension MasterPresenter {
+	func handleError(error: GetPointsError) {
+		switch error {
+		case .networkTrouble:
+			view?.showError(error: "Сервер временно недоступен. Попробуйте позже.")
+		case .wrongParameters:
+			view?.showError(error: "Неверное значение. Измените значение и попробуйте ещё раз")
+		case .emptyPoints:
+			view?.showError(error: "Точек не найдено. Попробуйте с другим количеством.")
+		case .unknown(let reason):
+			print(String(describing: reason))
+			print(reason.localizedDescription)
+			view?.showError(error: "Неизвестная ошибка. Попробуйте позже.")
+		}
+	}
+
 	func onGetPoints(_ result: Result<[PointModel], GetPointsError>) {
 		switch result {
 		case .success(let model):
-			print(model)
-			// TODO: Handle success
-			break
+			view?.navigateToDetail()
 		case .failure(let error):
-			print(error)
-			// TODO: Handle error
-			break
+			handleError(error: error)
 		}
 	}
 }

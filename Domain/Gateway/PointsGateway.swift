@@ -5,5 +5,5 @@
 import Foundation
 
 public protocol PointsGatewayProtocol {
-	func fetch(count: Int, completion: @escaping (Result<[PointModel], Error>) -> Void) -> CommandProtocol
+	func fetch(count: Int, completion: @escaping (Result<[PointModel], GetPointsError>) -> Void) -> CommandProtocol
 }

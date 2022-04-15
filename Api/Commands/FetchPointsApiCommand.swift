@@ -16,6 +16,10 @@ final class FetchPointsApiCommand: ApiCommand<PointsResponse> {
 
 	init(count: Int, completionBlock: @escaping ApiCompletionBlock<PointsResponse>) {
 		self.count = count
-		super.init(completionBlock: completionBlock)
+		super.init(resultBlock: completionBlock)
+	}
+
+	deinit {
+		debugPrint(String(describing: type(of: self)), "deinit")
 	}
 }

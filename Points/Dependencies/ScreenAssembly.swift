@@ -8,9 +8,10 @@ import Swinject
 class ScreenAssembly: Assembly {
 	func assemble(container: Container) {
 		container.register(MasterScreen.self) { resolver in
-			MasterScreen(
-					presenter: resolver.resolve(MasterPresenterProtocol.self)!
-			)
+			var presenter = resolver.resolve(MasterPresenterProtocol.self)!
+			let screen = MasterScreen(presenter: presenter)
+			presenter.view = screen
+			return screen
 		}
 	}
 }

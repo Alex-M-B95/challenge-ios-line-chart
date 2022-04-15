@@ -22,7 +22,7 @@ enum ApiMethod {
 	}
 }
 
-class ApiCommand<Response: Decodable>: CommandProtocol {
+class ApiCommand<Response: Decodable>: AppOperation {
 	// MARK: - Values
 	private lazy var fullRequestString: String = {
 		host.appendingPathComponent(endpoint).absoluteString
@@ -57,15 +57,21 @@ class ApiCommand<Response: Decodable>: CommandProtocol {
 		return [:]
 	}
 
-	let completionBlock: ApiCompletionBlock<Response>
+	let resultBlock: ApiCompletionBlock<Response>
 
 	// MARK: - Object life cycle
-	init(completionBlock: @escaping ApiCompletionBlock<Response>) {
-		self.completionBlock = completionBlock
+	init(resultBlock: @escaping ApiCompletionBlock<Response>) {
+		self.resultBlock = resultBlock
+		super.init()
+		ready()
 	}
 
 	// MARK: - Command methods
-	func execute() {
+	override func main() {
+		super.main()
+		guard status != .cancelled else {
+			return
+		}
 		let request = makeRequest()
 		request.resume()
 	}
@@ -93,6 +99,10 @@ private extension ApiCommand {
 	}
 
 	func onCompletion(_ response: AFDataResponse<Response>) {
+		defer {
+			debugPrint(String(describing: type(of: self)), "onCompletion(_ response:)")
+			finish()
+		}
 		guard let statusCode = response.response?.statusCode else {
 			fatalError()
 		}
@@ -100,16 +110,24 @@ private extension ApiCommand {
 		case 200...299:
 			switch response.result {
 			case .success(let model):
-				completionBlock(self, .success(model))
+				resultBlock(self, .success(model))
 			case .failure(let error):
-				completionBlock(self, .failure(error))
+				resultBlock(self, .failure(error))
 			}
 		case 400...499:
-			fatalError()
+			resultBlock(self, .failure(ApiError.logic(
+					statusCode: statusCode,
+					data: response.data)))
 		case 500...599:
-			fatalError()
+			resultBlock(self, .failure(ApiError.server(
+					statusCode: statusCode,
+					data: response.data)))
 		default:
-			fatalError()
+			if let error = response.error {
+				resultBlock(self, .failure(ApiError.unexpected(statusCode: statusCode, error: error, data: response.data)))
+			} else {
+				break // TODO: Handle
+			}
 		}
 	}
 }

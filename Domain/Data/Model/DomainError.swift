@@ -7,5 +7,6 @@ import Foundation
 public enum GetPointsError: Error {
 	case networkTrouble
 	case wrongParameters
+	case emptyPoints
 	case unknown(Error)
 }

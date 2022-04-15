@@ -5,6 +5,11 @@
 import Foundation
 import UIKit
 
+protocol MasterViewInput: AnyObject {
+	func navigateToDetail()
+	func showError(error: String)
+}
+
 final class MasterScreen: UIViewController {
 	// MARK: - Views
 	private lazy var rootView = MasterView()
@@ -12,6 +17,7 @@ final class MasterScreen: UIViewController {
 	// MARK: - Values
 	let presenter: MasterPresenterProtocol
 
+	// MARK: - Object life cycle
 	init(presenter: MasterPresenterProtocol) {
 		self.presenter = presenter
 		super.init(nibName: nil, bundle: nil)
@@ -21,7 +27,9 @@ final class MasterScreen: UIViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	// MARK: - Object life cycle
+	deinit {
+		debugPrint(String(describing: type(of: self)), "deinit")
+	}
 
 	// MARK: - UIViewController life cycle
 	override func loadView() {
@@ -37,8 +45,27 @@ extension MasterScreen: MasterViewDelegate {
 	}
 }
 
+extension MasterScreen: MasterViewInput {
+	func navigateToDetail() {
+		showAlert(title: "Loaded", message: "Navigate to DetailScreen")
+	}
+
+	func showError(error: String) {
+		showAlert(title: "Error", message: error)
+	}
+}
+
 private extension MasterScreen {
 	func setupUI() {
 		title = "Points"
+	}
+
+	func showAlert(title: String, message: String?) {
+		let alert = UIAlertController(
+				title: title,
+				message: message,
+				preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+		present(alert, animated: true)
 	}
 }
