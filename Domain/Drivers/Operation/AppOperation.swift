@@ -5,7 +5,7 @@
 
 import Foundation
 
-open class AppOperation: Operation {
+open class AppOperation: Operation, RetryableCommandProtocol {
 	// MARK: Lifecycle
 	public override init() {
 		super.init()
@@ -73,6 +73,16 @@ open class AppOperation: Operation {
 	public func ready() {
 		guard status == .pending else { return }
 		status = .ready
+	}
+
+	open func canRetry() -> Bool {
+		!isCancelled
+	}
+
+	open func retry() {
+		guard !isCancelled else { return }
+		status = .pending
+		start()
 	}
 }
 
