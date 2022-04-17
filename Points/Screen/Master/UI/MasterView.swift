@@ -30,43 +30,44 @@ final class MasterView: UIView {
 		setupUI()
 	}
 
-	// MARK: -
-	// MARK: -
+	// MARK: - Config
+	func config(value: Int) {
+		textField.text = "\(value)"
+		onChangeValue()
+	}
 }
 
 // MARK: - Private methods
 private extension MasterView {
 	func setupUI() {
 		backgroundColor = .white
-
-		for view in [titleLabel, textField, submitButton] {
-			// TODO: Create UIView extension
-			view.translatesAutoresizingMaskIntoConstraints = false
-			addSubview(view)
-		}
+		addSubviews(titleLabel, textField, submitButton)
 
 		titleLabel.snp.makeConstraints { make in
 			make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(20)
-			make.leading.trailing.equalToSuperview().inset(20)
+			make.leading.equalTo(safeAreaLayoutGuide.snp.leading).inset(20)
 		}
+		titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
 		titleLabel.font = .preferredFont(forTextStyle: .title2)
 		titleLabel.numberOfLines = 0
 		titleLabel.text = "Введите число точек:"
 
 		textField.snp.makeConstraints { make in
-			make.top.equalTo(titleLabel.snp.bottom).offset(8)
-			make.leading.equalToSuperview().inset(20)
-			make.trailing.equalToSuperview().inset(20)
+			make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(20)
+			make.leading.equalTo(titleLabel.snp.trailing).offset(4)
+			make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).inset(20)
+			make.height.equalTo(titleLabel.snp.height)
 		}
 		textField.font = .preferredFont(forTextStyle: .headline)
 		textField.placeholder = "0"
+		textField.textAlignment = .right
 		textField.addTarget(self, action: #selector(onChangeValue), for: .editingChanged)
 		textField.keyboardType = .numberPad
 
 		submitButton.snp.makeConstraints { make in
-			make.top.equalTo(textField.snp.bottom).offset(8)
-			make.leading.greaterThanOrEqualToSuperview().inset(40)
-			make.trailing.lessThanOrEqualToSuperview().inset(40)
+			make.top.equalTo(textField.snp.bottom).offset(20)
+			make.leading.greaterThanOrEqualTo(safeAreaLayoutGuide.snp.leading).inset(20)
+			make.trailing.lessThanOrEqualTo(safeAreaLayoutGuide.snp.trailing).inset(40)
 			make.centerX.equalToSuperview()
 		}
 		submitButton.setTitle("Загрузить", for: [])
@@ -82,7 +83,8 @@ private extension MasterView {
 	func onChangeValue() {
 		guard let text = textField.text,
 			  !text.isEmpty,
-			  let value = Int(text) else {
+			  let value = Int(text),
+			  value > 0 else {
 			submitButton.isEnabled = false
 			return
 		}

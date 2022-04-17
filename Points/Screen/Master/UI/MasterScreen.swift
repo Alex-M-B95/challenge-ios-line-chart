@@ -6,7 +6,7 @@ import Foundation
 import UIKit
 
 protocol MasterViewInput: AnyObject {
-	func navigateToDetail()
+	func navigateToDetail(items: [CGPoint])
 	func showError(error: String)
 }
 
@@ -37,6 +37,13 @@ final class MasterScreen: UIViewController {
 		view = rootView
 		setupUI()
 	}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		#if DEBUG
+		rootView.config(value: 25)
+		#endif
+	}
 }
 
 extension MasterScreen: MasterViewDelegate {
@@ -46,8 +53,10 @@ extension MasterScreen: MasterViewDelegate {
 }
 
 extension MasterScreen: MasterViewInput {
-	func navigateToDetail() {
-		showAlert(title: "Loaded", message: "Navigate to DetailScreen")
+	func navigateToDetail(items: [CGPoint]) {
+		let dataSource = DetailDataSource(items: items)
+		let screen = DetailScreen(dataSource: dataSource)
+		show(screen, sender: self)
 	}
 
 	func showError(error: String) {
@@ -57,7 +66,7 @@ extension MasterScreen: MasterViewInput {
 
 private extension MasterScreen {
 	func setupUI() {
-		title = "Points"
+//		title = "Главный"
 	}
 
 	func showAlert(title: String, message: String?) {

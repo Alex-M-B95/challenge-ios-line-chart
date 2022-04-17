@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import UIKit
 import Domain
 
 protocol MasterPresenterProtocol {
@@ -52,7 +53,8 @@ private extension MasterPresenter {
 	func onGetPoints(_ result: Result<[PointModel], GetPointsError>) {
 		switch result {
 		case .success(let model):
-			view?.navigateToDetail()
+			let items = model.map { CGPoint(x: $0.x, y: $0.y) }
+			view?.navigateToDetail(items: items)
 		case .failure(let error):
 			handleError(error: error)
 		}
